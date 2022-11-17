@@ -32,51 +32,51 @@ contract GoerliPriceConsumerV3 {
         XauUsdPriceFeed = AggregatorV3Interface(0x7b219F57a8e9C7303204Af681e9fA69d17ef626f);
     }
     //Returns the latest price
-    function getLatestEthPrice() public view returns (int) {
+    function getLatestEthPrice() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = EthUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestBtcPrice() public view returns (int) {
+    function getLatestBtcPrice() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = BtcUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestBtcEth() public view returns (int) {
+    function getLatestBtcEth() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = BtcEthPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestCzkUsd() public view returns (int) {
+    function getLatestCzkUsd() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = CzkUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestDaiUsd() public view returns (int) {
+    function getLatestDaiUsd() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = DaiUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestForthUsd() public view returns (int) {
+    function getLatestForthUsd() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = ForthUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestJpyUsd() public view returns (int) {
+    function getLatestJpyUsd() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = JpyUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestLinkEth() public view returns (int) {
+    function getLatestLinkEth() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = LinkEthPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestLinkUsd() public view returns (int) {
+    function getLatestLinkUsd() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = LinkUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestSnxUsd() public view returns (int) {
+    function getLatestSnxUsd() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = SnxUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestUsdcUsd() public view returns (int) {
+    function getLatestUsdcUsd() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = UsdcUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestXauUsd() public view returns (int) {
+    function getLatestXauUsd() internal view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = XauUsdPriceFeed.latestRoundData();
         return price;
     }
