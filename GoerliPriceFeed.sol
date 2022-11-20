@@ -32,52 +32,149 @@ contract GoerliPriceConsumerV3 {
         XauUsdPriceFeed = AggregatorV3Interface(0x7b219F57a8e9C7303204Af681e9fA69d17ef626f);
     }
     //Returns the latest price
-    function getLatestEthPrice() external view returns (int) {
+    function getLatestEthPrice() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = EthUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestBtcPrice() external view returns (int) {
+    function getLatestBtcPrice() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = BtcUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestBtcEth() external view returns (int) {
+    function getLatestBtcEth() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = BtcEthPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestCzkUsd() external view returns (int) {
+    function getLatestCzkUsd() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = CzkUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestDaiUsd() external view returns (int) {
+    function getLatestDaiUsd() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = DaiUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestForthUsd() external view returns (int) {
+    function getLatestForthUsd() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = ForthUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestJpyUsd() external view returns (int) {
+    function getLatestJpyUsd() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = JpyUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestLinkEth() external view returns (int) {
+    function getLatestLinkEth() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = LinkEthPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestLinkUsd() external view returns (int) {
+    function getLatestLinkUsd() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = LinkUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestSnxUsd() external view returns (int) {
+    function getLatestSnxUsd() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = SnxUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestUsdcUsd() external view returns (int) {
+    function getLatestUsdcUsd() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = UsdcUsdPriceFeed.latestRoundData();
         return price;
     }
-    function getLatestXauUsd() external view returns (int) {
+    function getLatestXauUsd() public view returns (int) {
         ( /*uint80 roundID*/, int price, /*uint startedAt*/, /*uint timeStamp*/, /*uint80 answeredInRound*/) = XauUsdPriceFeed.latestRoundData();
         return price;
+    }
+    // Int to Uint conversion
+    function UintEthUsd() public view returns(uint) {
+        if (getLatestEthPrice() < 0){
+            return uint(-getLatestEthPrice());
+            }
+        else {
+            return uint(getLatestEthPrice());
+        }
+    }
+    function UintCzkUsd() public view returns(uint) {
+        if (getLatestCzkUsd() < 0){
+            return uint(-getLatestCzkUsd());
+        }
+        else {
+            return uint(getLatestCzkUsd());
+        }
+    }
+    function UintJpyUsd() public view returns(uint) {
+        if (getLatestJpyUsd() < 0){
+            return uint(-getLatestJpyUsd());
+        }
+        else {
+            return uint(getLatestJpyUsd());
+        }
+    }
+    function UintBtcUsd() public view returns(uint) {
+        if (getLatestBtcPrice() < 0){
+            return uint(-getLatestBtcPrice());
+        }
+        else {
+            return uint(getLatestBtcPrice());
+        }
+    }
+    function UintBtcEth() public view returns(uint) {
+        if (getLatestBtcEth() < 0){
+            return uint(-getLatestBtcEth());
+        }
+        else {
+            return uint(getLatestBtcEth());
+        }
+    }
+    function UintDaiUsd() public view returns(uint) {
+        if (getLatestDaiUsd() < 0){
+            return uint(-getLatestDaiUsd());
+        }
+        else {
+            return uint(getLatestDaiUsd());
+        }
+    }
+    function UintForthUsd() public view returns(uint) {
+        if (getLatestForthUsd() < 0){
+            return uint(-getLatestForthUsd());
+        }
+        else {
+            return uint(getLatestForthUsd());
+        }
+    }
+    function UintLinkEth() public view returns(uint) {
+        if (getLatestLinkEth() < 0){
+            return uint(-getLatestLinkEth());
+        }
+        else {
+            return uint(getLatestLinkEth());
+        }
+    }
+    function UintLinkUsd() public view returns(uint) {
+        if (getLatestLinkUsd() < 0){
+            return uint(-getLatestLinkUsd());
+        }
+        else {
+            return uint(getLatestLinkUsd());
+        }
+    }
+    function UintSnxUsd() public view returns(uint) {
+        if (getLatestSnxUsd() < 0){
+            return uint(-getLatestSnxUsd());
+        }
+        else {
+            return uint(getLatestSnxUsd());
+        }
+    }
+    function UintUsdcUsd() public view returns(uint) {
+        if (getLatestUsdcUsd() < 0){
+            return uint(-getLatestUsdcUsd());
+        }
+        else {
+            return uint(getLatestUsdcUsd());
+        }
+    }
+    function UintXauUsd() public view returns(uint) {
+        if (getLatestXauUsd() < 0){
+            return uint(-getLatestXauUsd());
+        }
+        else {
+            return uint(getLatestXauUsd());
+        }
     }
 }
