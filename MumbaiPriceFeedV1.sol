@@ -3,9 +3,9 @@ pragma solidity ^0.8.17;
 
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
-// Contract address: 0x7CcC43cc55206AD89857e5FD9B41962AEa290c91
+// Contract address: 0x212B30E972ABc4c0b9e24dB44E99D84C40c59731
 
-contract GoerliPriceFeedV3 {
+contract MumbaiPriceFeedV1 {
     AggregatorV3Interface internal EthUsdPriceFeed;
     AggregatorV3Interface internal BtcUsdPriceFeed;
     AggregatorV3Interface internal EurUsdPriceFeed;
