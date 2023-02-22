@@ -3,7 +3,7 @@ pragma solidity ^0.8.18;
 
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
-// Contract address: 0x04Af569bEB6F8b1BCb058dBe39ab1d6426De67b7
+// Contract address: 0x133a627adA668fFA08f0B28e0254369CE735D13B
 
 contract PolygonPriceConsumerV1 {
     // Crypto On Chain Data
@@ -63,7 +63,7 @@ contract PolygonPriceConsumerV1 {
 
     constructor() {
         // Crypto On Chain Data
-        TotalMarketCap = AggregatorV3Interface(0x18E4058491C3F58bC2f747A9E64cA256Ed6B318d);
+        TotalMarketCap = AggregatorV3Interface(0xBb9749B5AD68574C106AC4F9cd5E1c400dbb88C3);
         // Crypto Prices
         OneInchUsdPriceFeed = AggregatorV3Interface(0x443C5116CdF663Eb387e72C688D276e702135C87);
         EthUsdPriceFeed = AggregatorV3Interface(0xF9680D99D6C9589e2a93a78A04A279e509205945);
